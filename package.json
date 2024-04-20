@@ -1,0 +1,17 @@
+{
+  "name": "potatoes-justin-backened",
+  "version": "1.0.0",
+  "description": "Bakened para la empresa potatoes justin",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --watch app.mjs"
+  },
+  "author": "SmoKING",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "mysql2": "3.9.6",
+    "zod": "3.22.4"
+  }
+}

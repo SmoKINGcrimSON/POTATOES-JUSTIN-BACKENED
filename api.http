@@ -1,0 +1,31 @@
+###PROBANDO CRUD EMPLEADOS
+###recuperar datos
+GET http://localhost:1234/Empleados/4
+###insertar datos
+POST http://localhost:1234/Empleados
+Content-Type: application/json
+
+{
+    "nombre": "Fernando Guerrero", 
+    "fecha_ingreso": "2022-04-11", 
+    "dni": "98874567",
+    "telefono": "987564345", 
+    "salario": 3200.34, 
+    "fecha_pago" : "2024-04-15",
+    "tipo_empleado" : "trabajador a destajo"
+}
+###eliminar datos
+DELETE http://localhost:1234/Empleados/2
+###PROBAR ACTUALIZACIÓN DE DATOS
+PATCH http://localhost:1234/Empleados/4
+Content-Type: application/json
+
+{
+    "nombre": "Angelo González Terán", 
+    "fecha_ingreso": "2022-05-11", 
+    "dni": "56765645",
+    "telefono": "907651243", 
+    "salario": 3000.34, 
+    "fecha_pago" : "2024-05-15",
+    "tipo_empleado" : "trabajador asalariado"
+}
