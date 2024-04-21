@@ -2,6 +2,7 @@ import express, { json } from "express";
 import {empleadoRouter} from './routes/empleadoRoute.mjs'
 import {corsMiddleware} from './middlewares/cors.mjs';
 import { administradorRouter } from "./routes/administradoresRoute.mjs";
+import { polleriaRoute } from "./routes/polleriasRoute.mjs";
 
 // instantiation of the app
 const app = express()
@@ -11,6 +12,7 @@ app.use(corsMiddleware())
 // end-points
 app.use('/empleados', empleadoRouter)
 app.use('/administradores', administradorRouter)
+app.use('/pollerias', polleriaRoute)
 
 // PORT FOR DEV AND DEPLOY(process.env.port)
 const PORT = process.env.PORT ?? 1234
