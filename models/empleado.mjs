@@ -1,16 +1,6 @@
-import mysql from 'mysql2/promise'
+import { ConnectionDB } from '../database/connection.mjs';
 
-//connection configuration
-const config = {
-    host: 'localhost',
-    user: 'adminPotatoes',
-    port: 3306,
-    password: 'SmOkInGcRiMsOn169?*',
-    database: 'potatoesJustin'
-}
-
-const connection = await mysql.createConnection(config)
-
+const connection = await ConnectionDB.instance()
 export class Empleado{
     //getEmpleados
     static async getEmpleados(){

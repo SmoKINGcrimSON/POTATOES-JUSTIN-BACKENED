@@ -5,6 +5,7 @@ import { administradorRouter } from "./routes/administradoresRoute.mjs";
 import { polleriaRoute } from "./routes/polleriasRoute.mjs";
 import { pedidoRouter } from "./routes/pedidoRoute.mjs";
 import { ventaRouter } from "./routes/ventasRoute.mjs";
+import { PORT } from "./config.mjs";
 
 // instantiation of the app
 const app = express()
@@ -19,8 +20,10 @@ app.use('/pedidos', pedidoRouter)
 app.use('/ventas', ventaRouter)
 
 // PORT FOR DEV AND DEPLOY(process.env.port)
-const PORT = process.env.PORT ?? 1234
+//const PORT = process.env.PORT ?? 1234
 
 app.listen(PORT, () => {
     console.log(`server listening on port http://localhost:${PORT}`)
 })
+
+//Logging modules: morgan, winston, pino...
