@@ -5,11 +5,10 @@ import { administradorRouter } from "./routes/administradoresRoute.mjs";
 import { polleriaRoute } from "./routes/polleriasRoute.mjs";
 import { pedidoRouter } from "./routes/pedidoRoute.mjs";
 import { ventaRouter } from "./routes/ventasRoute.mjs";
-import { PORT } from "./config.mjs";
 import cors from 'cors'
 
 // instantiation of the app
-const app = express()
+export const app = express()
 // use of middlewares
 app.use(json())
 app.use(cors())
@@ -19,12 +18,3 @@ app.use('/administradores', administradorRouter)
 app.use('/pollerias', polleriaRoute)
 app.use('/pedidos', pedidoRouter)
 app.use('/ventas', ventaRouter)
-
-// PORT FOR DEV AND DEPLOY(process.env.port)
-//const PORT = process.env.PORT ?? 1234
-
-app.listen(PORT, () => {
-    console.log(`server listening on port http://localhost:${PORT}`)
-})
-
-//Logging modules: morgan, winston, pino...

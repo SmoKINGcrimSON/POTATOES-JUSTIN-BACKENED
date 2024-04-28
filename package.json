@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Bakened para la empresa potatoes justin",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "node --watch app.mjs"
+    "test": "node --watch index.mjs",
+    "task-1": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles",
+    "task-2": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles --testPathPattern=tests/pedido.spec.js",
+    "task-3": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles --testPathPattern=tests/finanzas.spec.js"
   },
   "author": "SmoKING",
   "license": "ISC",
@@ -13,5 +17,9 @@
     "express": "4.19.2",
     "mysql2": "3.9.6",
     "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "supertest": "7.0.0"
   }
 }
