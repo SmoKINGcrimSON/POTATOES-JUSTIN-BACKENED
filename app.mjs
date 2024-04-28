@@ -6,12 +6,13 @@ import { polleriaRoute } from "./routes/polleriasRoute.mjs";
 import { pedidoRouter } from "./routes/pedidoRoute.mjs";
 import { ventaRouter } from "./routes/ventasRoute.mjs";
 import { PORT } from "./config.mjs";
+import cors from 'cors'
 
 // instantiation of the app
 const app = express()
 // use of middlewares
 app.use(json())
-app.use(corsMiddleware())
+app.use(cors())
 // end-points
 app.use('/empleados', empleadoRouter)
 app.use('/administradores', administradorRouter)
