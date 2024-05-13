@@ -1,7 +1,7 @@
 ####Recuperar todas las ventas
 GET http://localhost:1234/ventas
 ###Recuperar ventas de una polleria específica
-GET http://localhost:1234/ventas?polleria_id=4
+GET http://localhost:1234/ventas?polleria_id=1
 ####eliminar venta por id
 DELETE http://localhost:1234/ventas/1
 ####crear venta
@@ -11,5 +11,5 @@ Content-Type: application/json
 {
     "fecha_transaccion": "2024-03-12",
     "metodo_pago": "BCP",
-    "id_pedido": 4
+    "id_pedido": 1
 }

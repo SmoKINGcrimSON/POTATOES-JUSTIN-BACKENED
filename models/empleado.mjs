@@ -69,8 +69,6 @@ export class Empleado{
         if(recuperarEmpleado === null){
             return false
         }
-
-        console.log(recuperarEmpleado)
         /// desestructurar campos recuperados y renombrar para coincidencia con input
         const {nombre, fecha_ingreso, dni, telefono, sueldo: salario, 
         fecha_pago, tipo_empleado} = recuperarEmpleado;
@@ -81,7 +79,6 @@ export class Empleado{
             nombre, fecha_ingreso, dni, telefono, salario, fecha_pago, tipo_empleado,
             ...input
         }
-        //console.log(ae.id, ae.nombre, ae.fecha_ingreso, ae.dni, ae.telefono, ae.salario, ae.fecha_pago, ae.tipo_empleado)
         //intentar actualizar en BBDD para persistencia de datos
         await connection.query(
             'call sp_actualizarEmpleado(?, ?, ?, ?, ?, ?, ?, ?, @actualizado);', [ae.id, ae.nombre, ae.fecha_ingreso, ae.dni, ae.telefono, ae.salario, ae.fecha_pago, ae.tipo_empleado]
@@ -89,7 +86,7 @@ export class Empleado{
         //comprobar si se pudo actualizar
         const actualizado = await connection.query('SELECT @actualizado AS empleado_actualizado');
         if(actualizado[0][0].empleado_actualizado === 0){
-            return false
+            return null
         }
         //retornar valor actualizado
         return ae

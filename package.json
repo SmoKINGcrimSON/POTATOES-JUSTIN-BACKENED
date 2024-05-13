@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "node --watch index.mjs",
-    "task-1": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles",
-    "task-2": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles --testPathPattern=tests/pedido.spec.js",
-    "task-3": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles --testPathPattern=tests/finanzas.spec.js"
+    "task-1": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles --testPathPattern=tests/polleria.spec.js",
+    "task-2": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles --testPathPattern=tests/pedido.spec.js",
+    "task-3": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles --testPathPattern=tests/finanzas.spec.js"
   },
   "author": "SmoKING",
   "license": "ISC",

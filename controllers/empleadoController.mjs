@@ -63,7 +63,7 @@ export class EmpleadoController{
         //si todo es válido, proceder a tratar de actualizar la BBDD con los nuevos datos
         const updatedEmpleado = await Empleado.update({id, input: empleado.data})
         //devolver el resultado de la operación
-        if(!updatedEmpleado) return res.status(401).json({message: '401: el recurso no fue actualizado, dni pertenece ya a otra persona.'})
+        if(updatedEmpleado === null) return res.status(401).json({message: '401: el recurso no fue actualizado, dni pertenece ya a otra persona.'})
         return res.status(202).json(updatedEmpleado)
     }
 }

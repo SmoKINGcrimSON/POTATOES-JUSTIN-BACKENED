@@ -3,24 +3,24 @@ GET http://localhost:1234/pollerias
 ###Recuperar pollería por ID
 GET http://localhost:1234/pollerias/1
 ###Eliminar recurso
-DELETE http://localhost:1234/pollerias/5
+DELETE http://localhost:1234/pollerias/4
 ####update by id
-PATCH http://localhost:1234/pollerias/1
+PATCH http://localhost:1234/pollerias/2
 Content-Type: application/json
 
 {
-    "ruc": "98756734569",
-    "nombre_empresa": "El fogón dorado",
-    "telefono": "923671812",
-    "titular": "Roxana Sánchez"
+    "ruc": "98756734512",
+    "nombre_empresa": "Súper Chicken",
+    "telefono": "923671813",
+    "titular": "Mario Rodríguez"
 }
 ####create resource
 POST http://localhost:1234/pollerias/
 Content-Type: application/json
 
 {
-    "ruc": "88866655511",
-    "nombre_empresa": "El rey del Posho",
-    "telefono": "987567123",
-    "titular": "Martín Delgado"
+    "ruc": "89897676121",
+    "nombre_empresa": "Súper Chicken",
+    "telefono": "923671813",
+    "titular": "Mario Rodríguez"
 }
