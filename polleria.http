@@ -3,7 +3,7 @@ GET http://localhost:1234/pollerias
 ###Recuperar pollería por ID
 GET http://localhost:1234/pollerias/1
 ###Eliminar recurso
-DELETE http://localhost:1234/pollerias/4
+DELETE http://localhost:1234/pollerias/5
 ####update by id
 PATCH http://localhost:1234/pollerias/2
 Content-Type: application/json
