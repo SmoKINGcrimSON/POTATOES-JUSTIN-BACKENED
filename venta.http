@@ -1,15 +1,15 @@
 ####Recuperar todas las ventas
 GET http://localhost:1234/ventas
 ###Recuperar ventas de una polleria específica
-GET http://localhost:1234/ventas?polleria_id=1
+GET http://localhost:1234/ventas?polleria_nombre=Súper%20Chicken
 ####eliminar venta por id
-DELETE http://localhost:1234/ventas/1
+DELETE http://localhost:1234/ventas/70abb781-e590-4eb6-991d-e6535149d29a
 ####crear venta
-POST http://localhost:1234/ventas
+POST http://localhost:1234/ventas/
 Content-Type: application/json
 
 {
-    "fecha_transaccion": "2024-03-12",
-    "metodo_pago": "BCP",
-    "id_pedido": 1
+    "id": "70abb781-e590-4eb6-991d-e6535149d29a",
+    "fecha_transaccion": "2024-03-14",
+    "metodo_pago": "BCP"
 }

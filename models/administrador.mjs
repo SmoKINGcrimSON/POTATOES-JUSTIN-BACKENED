@@ -3,36 +3,32 @@ import { ConnectionDB } from "../database/connection.mjs"
 const connection = await ConnectionDB.instance()
 
 export class Administrador{
-    //existAdministrador
-    static async existAdministrador({administrador}){
-        //desestructuración de administrador
-        const {email, password} = administrador
-        //query para comprobar si usuario existe
-        await connection.query('call sp_existeAdministrador(?, ?, @existe_administrador);', [email, password])
-        //query seleccionar lo que retorna @existe_administrador
-        const existe = await connection.query('select @existe_administrador as existe_administrador')
-        //no existe el recurso
-        if(existe[0][0].existe_administrador === 0){
-            return false
-        }
-        else return true
+
+    static async get({id}){
+        const data = await connection.query('call sp_recuperarAdministrador(?);', [id])
+        return data[0][0][0] === undefined? null : data[0][0][0] 
     }
-    //update
+
+    static async exist({administrador}){
+        //call DB
+        const {email, password} = administrador
+        const response = await connection.query('call sp_existeAdministrador(?, ?);', [email, password])
+        //return controller
+        return response[1] === undefined? null : response[0][0][0] 
+    }
+
     static async update({id, administrador}){
-        ///recuperar el administrador (call to BBDD):
+        //call DB
         const resultado = await connection.query('call sp_recuperarAdministrador(?);', [id])
-        ///verificar si se recuperaron los datos
-        if(resultado[0][0] === undefined) return null
-        ///crear un nuevo administrador:
-        const ne = {
+        if(resultado[0][0][0] === undefined) return null
+        ///nueva data
+        const data = {
             ...resultado[0][0][0],
             ...administrador
         }
-        ///actualizar datos con 'newAdministrador' AQUÍ ME QUEDÉ
-        const creado = await connection.query('call sp_actualizarAdministrador(?, ?, ?);', [ne.id, ne.email, ne.password])
-        ///recuperar los datos actualizados del administrador
-        const newAdministrador = creado[0][0][0]
-        ///devolver el administrador
-        return newAdministrador
+        ///call DB again
+        const dataUpdate = await connection.query('call sp_actualizarAdministrador(?, ?, ?);', [data.id, data.email, data.password])
+        ///return
+        return dataUpdate[0][0][0] === undefined? null : dataUpdate[0][0][0]
     }
 }

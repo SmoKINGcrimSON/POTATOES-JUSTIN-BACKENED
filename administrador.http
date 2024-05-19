@@ -1,16 +1,20 @@
+#####recuperar administrador
+GET http://localhost:1234/administradores/0f47612f-12da-11ef-86e4-0a0027000009
+
 #####evaluar si administrador existe
 POST http://localhost:1234/administradores
 Content-Type: application/json
 
 {
-    "email": "fernandoguerrero@outlook.com",
-    "password": "Df45?*ad-_-"
+    "email": "fernandolol169@outlook.com",
+    "password": "4512Fer**"
 }
 
 #####actualizar datos de un administrador
-PATCH http://localhost:1234/administradores/1
+PATCH http://localhost:1234/administradores/0f47612f-12da-11ef-86e4-0a0027000009
 Content-Type: application/json
 
 {
-    "email": "fernandoguerrero@outlook.com"
+    "email": "fernandolol169@outlook.com",
+    "password": "123Fer**"
 }

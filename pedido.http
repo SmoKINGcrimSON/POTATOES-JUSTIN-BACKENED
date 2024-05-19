@@ -3,26 +3,26 @@ GET http://localhost:1234/pedidos
 #####PROBAR RECUPERAR LOS PEDIDOS DE LA APLICACIÓN
 GET http://localhost:1234/pedidos?polleria_id=1
 #####DELETE BY ID
-DELETE http://localhost:1234/pedidos/2
+DELETE http://localhost:1234/pedidos/e41f95d4-946c-4e1d-b174-2d49292333c2
 #####ACTUALIZAR PEDIDO
-PATCH http://localhost:1234/pedidos/2
+PATCH http://localhost:1234/pedidos/70abb781-e590-4eb6-991d-e6535149d29a
 Content-Type: application/json
 
 {
-    "id_administrador": 1,
-    "id_polleria": 1,
-    "cantidad_kg": 30,
-    "fecha": "2024-04-05",
-    "tipo_papa": "Huamantanga"
+    "id_administrador": "0f47612f-12da-11ef-86e4-0a0027000009",
+    "id_polleria": "68ffa5cd-155c-11ef-86e4-0a0027000009",
+    "cantidad_kg": 124.5,
+    "precio_kg": 5.5,
+    "fecha": "2024-03-13"
 }
 ####CREAR PEDIDO
 POST http://localhost:1234/pedidos
 Content-Type: application/json
 
 {
-    "id_administrador": 1,
-    "id_polleria": 2,
+    "id_administrador": "0f47612f-12da-11ef-86e4-0a0027000009",
+    "id_polleria": "68ffa5cd-155c-11ef-86e4-0a0027000009",
     "cantidad_kg": 44.5,
-    "fecha": "2024-03-12",
-    "tipo_papa": "Huamantanga"
+    "precio_kg": 5.5,
+    "fecha": "2024-03-12"
 }

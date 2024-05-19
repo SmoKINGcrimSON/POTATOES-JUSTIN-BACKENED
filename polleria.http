@@ -1,11 +1,11 @@
 ###Recuperar todas las pollerías
 GET http://localhost:1234/pollerias
 ###Recuperar pollería por ID
-GET http://localhost:1234/pollerias/1
+GET http://localhost:1234/pollerias/68ffa5cd-155c-11ef-86e4-0a0027000009
 ###Eliminar recurso
-DELETE http://localhost:1234/pollerias/5
+DELETE http://localhost:1234/pollerias/9c204269-b914-4c15-8760-c983cb65b318
 ####update by id
-PATCH http://localhost:1234/pollerias/2
+PATCH http://localhost:1234/pollerias/68ffa5cd-155c-11ef-86e4-0a0027000009
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "ruc": "89897676121",
-    "nombre_empresa": "Súper Chicken",
-    "telefono": "923671813",
-    "titular": "Mario Rodríguez"
+    "nombre_empresa": "Crazy Pollo",
+    "telefono": "987123654",
+    "titular": "Jorge Domínguez"
 }

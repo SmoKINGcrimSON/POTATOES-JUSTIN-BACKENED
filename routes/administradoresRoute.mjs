@@ -3,5 +3,6 @@ import { AdministradorController } from '../controllers/administradorController.
 
 export const administradorRouter = Router()
 
-administradorRouter.post('/', AdministradorController.existAdministrador)
+administradorRouter.get('/:id', AdministradorController.getById)
+administradorRouter.post('/', AdministradorController.exist)
 administradorRouter.patch('/:id', AdministradorController.update)
